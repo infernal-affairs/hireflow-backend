@@ -73,3 +73,11 @@ curl http://localhost:8080/api/v1/health
 ## 文档
 
 项目 Constitution、接口文档和学习材料在独立的 `docs` 仓库中。
+
+## IntelliJ IDEA
+
+1. 用 IntelliJ IDEA 单独打开 `HireFlow/backend`，作为 Maven 项目导入。
+2. Project SDK 选择 Java 21（Homebrew `openjdk@21`）。
+3. 运行 `com.hireflow.HireFlowApplication`。
+4. 访问 `http://localhost:8080/api/v1/health` 验证启动。
+5. 不要用 IDEA 打开外层 `HireFlow`，否则 Git 面板会混淆三个独立仓库。
