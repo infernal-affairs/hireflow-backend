@@ -1,0 +1,19 @@
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+
+# Local secrets and environment
+.env
+.env.local
+
+# Runtime logs
+logs/
+*.log
