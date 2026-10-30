@@ -1,26 +1,17 @@
 package com.hireflow.common.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@AllArgsConstructor
+@Getter
 @JsonInclude(JsonInclude.Include.ALWAYS)
 public class ApiResponse<T> {
     private final int code;
     private final String message;
     private final T data;
-    public ApiResponse(int code, String message, T data) {
-        this.code = code;
-        this.message = message;
-        this.data = data;
-    }
-    public int getCode() {
-        return code;
-    }
-    public String getMessage() {
-        return message;
-    }
-    public T getData() {
-        return data;
-    }
+
     public static <T> ApiResponse<T> success (T data){
         return new ApiResponse<>(0,"success",data);
     }
