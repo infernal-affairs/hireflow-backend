@@ -1,6 +1,8 @@
 package com.hireflow.health;
 
 import java.util.Map;
+
+import com.hireflow.common.response.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthController {
 
     @GetMapping("/health")
-    public Map<String, String> health() {
-        return Map.of("status", "UP", "service", "hireflow-backend");
+    public ApiResponse<Map<String, String>> health() {
+        return ApiResponse.success(
+                Map.of("status", "UP", "service", "hireflow-backend")
+        );
     }
 }

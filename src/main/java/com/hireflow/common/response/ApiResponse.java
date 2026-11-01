@@ -3,6 +3,7 @@ package com.hireflow.common.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import com.hireflow.common.exception.ErrorCode;
 
 @AllArgsConstructor
 @Getter
@@ -18,4 +19,6 @@ public class ApiResponse<T> {
     public static ApiResponse<Void> success (){
         return new ApiResponse<>(0,"success",null);
     }
+    public static ApiResponse<Void> failure(ErrorCode errorCode){ return new ApiResponse<>(errorCode.getCode(), errorCode.getMessage(), null);}
+    public static ApiResponse<Void> failure(ErrorCode errorCode, String msg){return new ApiResponse<>(errorCode.getCode(),msg,null);}
 }
